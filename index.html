@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container page-header" id="header">
+        <a href="https://www.mt-gaming.com"><img src="multimedia/MTGLogo.png" class="img-responsive" height="250px" width="500px" id="logo"></a>
+    </div>
+    <div id="title-container">
+        <h1 id="title">Chatlog Parser</h1>
+    </div>
+    <div class="row vertical-center-row" style="margin-left: auto; margin-right: auto;">
+        <div class="col-md-2">
+            <div class="settings-menu">
+                <div class="settings-header">
+                    <span class="glyphicon glyphicon-cog" style="color:white;"> <span style="color:white;font-family:'Raleway',sans-serif;font-size:16px;font-weight:bold">Settings</span></span>
+                </div>
+                <label><input type="checkbox" value="GTAMP" id="gtamp" checked> GTA:MP Parsing</label>
+                <label>Filter out lines including (seperate
+                    with ','):<textarea id="filter-words" style="resize:none" class="form-control"></textarea></label>
+                <label>Select only lines including (seperate
+                    with ','):<textarea id="exclusive-words" style="resize:none" class="form-control"></textarea></label>
+                <label>Substitution patterns (wordtobesubbed1,
+                    wordtosubwith1;..)<textarea id="sub-words" style="resize:none" class="form-control" placeholder="Syntax: wordtobesubbed1,wordtosubwith1;wordtobesubbed2,wordtosubwith2;.."></textarea></label>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <textarea id="input" class="form-control" rows="20" style="resize:none" placeholder="Paste your log text here"></textarea>
+        </div>
+        <div class="col-md-4">
+            <textarea id="output" class="form-control" rows="20" style="resize:none" placeholder="Your parsed log will show up here"></textarea>
+        </div>
+        <div class="col-md-2" id="download">
+        </div>
+    </div>
+    <div class="button-container">
+        <button id="button">Parse it!</button>
+    </div>
+</body>
+</html>
