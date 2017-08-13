@@ -1,6 +1,7 @@
 "use strict";
 
 var textfile = null;
+var lineEnding;
 
 function downloadfile(file) {
     $("#downloadA").prop({'href':'data:text/plain;charset=utf-8,' + encodeURIComponent(file),'download':'chat.log'});
@@ -73,7 +74,7 @@ function parse(text, GTAMPParse, filter, selector, sub){
         }
     }
     for (var l = 0; l < lines.length; l++) {
-        parsedText += lines[l] + '\n';
+        parsedText += lines[l] + lineEnding;
     }
     $("#output").val(parsedText);
     textfile = parsedText;
@@ -97,6 +98,12 @@ function main(){
             parse($("#input").val(), $("#gtamp"), $("#filter-words").val(), $("#exclusive-words").val(), $("#sub-words").val());
         }
     });
+    if (navigator.platform.indexOf('Win') !== -1 || navigator.platform.indexOf('Windows') !== -1) {
+        lineEnding = '\r\n';
+    }
+    else {
+        lineEnding = '\n';
+    }
 }
 
 
